@@ -166,9 +166,6 @@ ingredient_attr = [
       name: "Ginger"
     },
     {
-      name: "Lime"
-    },
-    {
       name: "Cantaloupe"
     },
     {
