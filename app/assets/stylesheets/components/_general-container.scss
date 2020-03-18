@@ -1,37 +1,37 @@
 .general-container {
-  margin: 20px 20px 0px 100px;
+  margin: 20px 100px 0px 100px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
   .general-container {
-    margin: 20px 20px 0px 20px;
+    margin: 20px 100px 0px 20px;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .general-container {
-    margin: 20px 20px 0px 20px;
+    margin: 20px 100px 0px 20px;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .general-container {
-    margin: 20px 20px 0px 100px;
+    margin: 20px 100px 0px 100px;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .general-container {
-    margin: 20px 20px 0px 100px;
+    margin: 20px 100px 0px 100px;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .general-container {
-    margin: 20px 20px 0px 100px;
+    margin: 20px 100px 0px 100px;
   }
 }
