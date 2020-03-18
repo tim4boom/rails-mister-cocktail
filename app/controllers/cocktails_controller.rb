@@ -3,7 +3,7 @@ class CocktailsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         cocktails.name @@ :query \
-        OR ingredients.name @@ :query \
+        OR ingredients.name ILIKE :query \
       "
       @cocktails = Cocktail.joins(:ingredients).where(sql_query, query: "%#{params[:query]}%")
     else
