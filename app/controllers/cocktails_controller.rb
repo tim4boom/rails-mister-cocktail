@@ -1,7 +1,11 @@
 class CocktailsController < ApplicationController
   def index
     if params[:query].present?
-      @cocktails = Cocktail.where('name ILIKE ?', "%#{params[:query]}%")
+      sql_query = " \
+        cocktails.name ILIKE :query \
+        OR ingredients.name ILIKE :query \
+      "
+      @cocktails = Cocktail.joins(:ingredients).where(sql_query, query: "%#{params[:query]}%")
     else
       @cocktails = Cocktail.all
     end
