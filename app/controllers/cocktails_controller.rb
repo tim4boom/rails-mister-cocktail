@@ -1,6 +1,13 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    if params[:query].present?
+      sql_query = "
+        cocktails.name ILIKE :query
+      "
+      @cocktails = Cocktail.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all
+    end
     @cocktail = Cocktail.new
   end
 
