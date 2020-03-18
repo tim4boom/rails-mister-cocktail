@@ -14,4 +14,3 @@ class Cocktail < ApplicationRecord
       tsearch: { prefix: true }
     }
 end
-
