@@ -3,6 +3,7 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
   has_one_attached :image
   validates :name, presence: true, uniqueness: true
+  validates :photo, presence: true
 
   include PgSearch::Model
   pg_search_scope(
