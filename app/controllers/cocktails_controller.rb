@@ -1,9 +1,9 @@
 class CocktailsController < ApplicationController
   def index
     if params[:query].present?
-      sql_query = " \
-        cocktails.name @@ :query \
-        OR ingredients.name @@ :query \
+      sql_query = "
+        cocktails.name @@ :query
+        OR ingredients.name @@ :query
       "
       @cocktails = Cocktail.joins(:ingredients).where(sql_query, query: "%#{params[:query]}%")
     else
@@ -15,6 +15,7 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.find(params[:id])
     @doses = Dose.where(cocktail_id: @cocktail)
+    raise
   end
 
   def new

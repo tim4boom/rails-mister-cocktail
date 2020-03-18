@@ -1,6 +1,10 @@
 <h1><%= @cocktail.name %></h1>
 
-<%= image_tag @cocktail.photo, width: 400, height: 300, crop: :fill %>
+<% if @cocktail.photo.present? %>
+  <%= image_tag @cocktail.photo, width: 400, height: 300, crop: :fill %>
+<% else %>
+  <%= image_tag 'default_missing_image.png', width: 400, height: 300, crop: :fill %>
+<% end %>
 
 <ul style="list-style: none">
   <% @doses.each do |dose| %>

@@ -5,7 +5,8 @@ class Cocktail < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   include PgSearch::Model
-  pg_search_scope :global_search,
+  pg_search_scope(
+    :global_search,
     against: [:name],
     associated_against: {
       ingredient: [:name]
@@ -13,4 +14,5 @@ class Cocktail < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  )
 end
