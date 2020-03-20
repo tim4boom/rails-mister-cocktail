@@ -1,3 +1,5 @@
+require 'faker'
+
 puts 'Cleaning database...'
 Cocktail.destroy_all
 
@@ -437,9 +439,10 @@ cocktail_attr = [
   }
 ]
 
-Cocktail.create!(cocktail_attr)
+cocktail = Cocktail.create!(cocktail_attr)
 puts "Finished"
 
+# Creating seeds for Ingredients
 puts 'Cleaning database...'
 Ingredient.destroy_all
 
@@ -753,8 +756,27 @@ ingredient_attr = [
     }
   ]
 
-Ingredient.create!(ingredient_attr)
+ingredient = Ingredient.create!(ingredient_attr)
 puts "Finished"
+
+# Creating doses
+puts 'Cleaning database...'
+Dose.destroy_all
+
+puts 'Creating fake doses...'
+10.times do
+  i = 0
+  108.times do
+    dose = Dose.new(
+      description: Faker::Food.measurement,
+      cocktail: cocktail[i],
+      ingredient: ingredient.sample
+    )
+    dose.save!
+    i += 1
+  end
+end
+puts 'Finished!'
 
 # require 'open-uri'
 # require 'JSON'
