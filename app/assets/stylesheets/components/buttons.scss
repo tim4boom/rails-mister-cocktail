@@ -8,5 +8,23 @@
 }
 
 .btn-treehouse:hover {
+  color: white;
+  text-decoration: none;
   background: #3ac161;
 }
+
+.btn-grey {
+  color: white;
+  padding: 0.375rem 25px;
+  border-radius: 16px;
+  font-weight: bold;
+  background: lightgrey;
+  transition: background 0.3s ease;
+}
+
+.btn-grey:hover {
+  color: white;
+  text-decoration: none;
+  background: grey;
+}
+
