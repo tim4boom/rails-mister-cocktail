@@ -3,30 +3,28 @@
 
   <div class="d-flex">
     <div class="general-container">
-      <div class="banner-content">
-        <div class="dict-froffy">
-          <h1>Froffie</h1>
-          <p>| ˈfrɒffi |</p>
-          <p>noun INFORMAL, DEROGATORY</p>
-          <p>plural noun: froffies</p>
-          <p><em>Sean: Oi coppa, keen to hit the froffies this arvy?<br>
-          Steve: Sure am mate.</em></p>
-        </div>
+      <div class="dict-froffy">
+        <h1>Froffie</h1>
+        <p>| ˈfrɒffi |</p>
+        <p>noun INFORMAL, DEROGATORY</p>
+        <p>plural noun: froffies</p>
+        <p><em>Sean: Oi coppa, keen to hit the froffies this arvy?<br>
+        Steve: Sure am mate.</em></p>
+      </div>
 
-        <div class="search-form">
-          <div class="d-flex">
-            <div class="search-form-input">
-              <%= form_tag root_path, method: :get do %>
-                <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  placeholder: "Find a Froffie"
-                %>
-            </div>
-            <div class="search-form-submit">
-              <%= submit_tag "Search", class: "btn-treehouse" %>
-              <% end %>
-            </div>
+      <div class="search-form">
+        <div class="d-flex">
+          <div class="search-form-input">
+            <%= form_tag root_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find a Froffie"
+              %>
+          </div>
+          <div class="search-form-submit">
+            <%= submit_tag "Search", class: "btn-treehouse" %>
+            <% end %>
           </div>
         </div>
       </div>
