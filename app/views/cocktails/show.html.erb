@@ -11,10 +11,10 @@
   <li>
     <%= dose.ingredient.name %>
     - <%= dose.description %>
-    <%= link_to "Delete dose", dose_path(dose),method: :delete, class: "btn btn-primary m-3" %>
+    <%= link_to "Delete dose", dose_path(dose),method: :delete, class: "btn-treehouse" %>
   </li>
   <% end %>
 </ul>
 
-<%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary mt-3" %>
-<%= link_to "Back", root_path, class: "btn btn-primary mt-3" %>
+<%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn-treehouse" %>
+<%= link_to "Back", root_path, class: "btn-treehouse" %>
