@@ -1,22 +1,23 @@
 <div class="general-container">
   <h1><%= @cocktail.name %></h1>
 
-  <%= image_tag @cocktail.photo, width: 400, height: 300, crop: :fill %>
+  <%= image_tag @cocktail.photo, width: 600, height: 450, crop: :fill %>
+
+    <h2 style="width: 600px; margin: 50px 0; text-align: center">How to make it</h2>
 
   <table class="doses-table">
     <tbody>
-      <tr>
-        <% @doses.each do |dose| %>
-          <td width="33%" class="td-left"><%= dose.ingredient.name %></td>
-          <td width="66%" class="td-right"><%= dose.description %></td>
-          <%= link_to "", dose_path(dose), method: :delete, class: "fas fa-trash-alt" %>
-          <% end %>
-
-      </tr>
+      <% @doses.each do |dose| %>
+        <tr>
+          <td class="td-left"><strong><%= dose.ingredient.name %></strong></td>
+          <td class="td-middle"><em><%= dose.description %></em></td>
+          <td class="td-right"><%= link_to "", dose_path(dose), method: :delete, class: "fas fa-trash-alt" %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
-  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn-treehouse" %>
   <%= link_to "Back", root_path, class: "btn-grey" %>
+  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn-treehouse" %>
 </div>
 
