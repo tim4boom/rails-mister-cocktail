@@ -1,57 +1,116 @@
+<style>
+  .typing {
+        position: relative;
+        line-height: 24px;
+        display: inline-block;
+        color: #FFF;
+        min-width: 1px;
+        min-height: 24px;
+      }
+      .typing:after {
+        content: "";
+        position: absolute;
+        top: 5%;
+        right: -2px;
+        width: 1px;
+        height: 90%;
+        border-right: 2px solid #FFF;
+        animation: blink .5s infinite ease;
+      }
+      @keyframes blink{
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1%;
+        }
+      }
+</style>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://res.cloudinary.com/tim4boom/image/upload/v1584553915/Froffy-banner2_kq6xgj.png')">
+ <body>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://res.cloudinary.com/tim4boom/image/upload/v1584553915/Froffy-banner2_kq6xgj.png')">
 
-  <div class="d-flex justify-content-center">
-    <div class="general-container">
-      <div class="dict-froffy">
-        <h1>Froffie</h1>
-        <p>| ˈfrɒffi |</p>
-        <p>noun INFORMAL, DEROGATORY</p>
-        <p>plural noun: froffies</p>
-        <p><em>Sean: Oi coppa, keen to hit the froffies this arvy?<br>
-        Steve: Sure am mate.</em></p>
-      </div>
+    <div class="d-flex justify-content-center">
+      <div class="general-container">
+        <div class="dict-froffy">
+          <h1>Froffie</h1>
+          <p>| ˈfrɒffi |</p>
+          <p>noun INFORMAL, DEROGATORY</p>
+          <p>plural noun: froffies</p>
+          <p><em>Sean: Oi coppa, keen to hit the froffies this arvy?<br>
+          Steve: Sure am mate.</em></p>
+        </div>
 
-      <div class="search-form">
-        <div class="d-flex">
-          <div class="search-form-input">
-            <%= form_tag root_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Find a Froffie"
-              %>
-          </div>
-          <div class="search-form-submit">
-            <%= submit_tag "Search", class: "btn-treehouse" %>
-            <% end %>
+        <div id="banner-slogan">
+          <h1><em>Enjoy your froffie the way you should...</em></h1>
+          <br>
+          <h1><em><div id="typing" class="typing"></div></em></h1>
+          <br>
+        </div>
+
+        <div class="search-form">
+          <div class="d-flex">
+            <div class="search-form-input">
+              <%= form_tag root_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find a Froffie"
+                %>
+            </div>
+            <div class="search-form-submit">
+              <%= submit_tag "Search", class: "btn-treehouse" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="d-flex">
-  <div class="general-container">
-    <div class="form-and-cards">
-      <div class="add-form">
-        <h4>Add a cocktail:</h4>
-        <%= simple_form_for (@cocktail) do |f| %>
-          <%= f.input :name, placeholder: "Denzel Frothington" %>
-          <%= f.input :photo, placeholder: "Your-froffy-image.jpg" %>
-          <%= f.submit "Add", class: "btn-treehouse" %>
-        <% end %>
-      </div>
+  <div class="d-flex">
+    <div class="general-container">
+      <div class="form-and-cards">
+        <div class="add-form">
+          <h4>Add a cocktail:</h4>
+          <%= simple_form_for (@cocktail) do |f| %>
+            <%= f.input :name, placeholder: "Denzel Frothington" %>
+            <%= f.input :photo, placeholder: "Your-froffy-image.jpg" %>
+            <%= f.submit "Add", class: "btn-treehouse" %>
+          <% end %>
+        </div>
 
-      <div class="cards">
-        <% @cocktails.each do |cocktail| %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo %>')">
-            <%= cocktail.name %>
-            <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
-          </div>
-        <% end %>
+        <div class="cards">
+          <% @cocktails.each do |cocktail| %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo %>')">
+              <%= cocktail.name %>
+              <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <script>
+    var typeString = ['NOT German cold.  ', 'REAL cold.  '];
+    var  i = 0;
+    var count = 0
+    var selectedText = '';
+    var text = '';
+    (function type() {
+      if (count == typeString.length) {
+        count = 0;
+      }
+      selectedText = typeString[count];
+      text = selectedText.slice(0, ++i);
+      document.getElementById('typing').innerHTML = text;
+      if (text.length === selectedText.length) {
+        count++;
+        i = 0;
+      }
+      setTimeout(type, 250);
+    }());
+  </script>
+
+</body>
