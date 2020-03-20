@@ -42,7 +42,10 @@
         </div>
 
         <div id="banner-slogan">
-          <h1>Enjoy your froffie the way you should <div id="typing" class="typing"></div></h1>
+          <h1><em>Enjoy your froffie the way you should...</em></h1>
+          <br>
+          <h1><em><div id="typing" class="typing"></div></em></h1>
+          <br>
         </div>
 
         <div class="search-form">
@@ -90,7 +93,7 @@
   </div>
 
   <script>
-    var typeString = ['not German cold.  ', 'REAL cold.  '];
+    var typeString = ['NOT German cold.  ', 'REAL cold.  '];
     var  i = 0;
     var count = 0
     var selectedText = '';
@@ -109,14 +112,14 @@
       setTimeout(type, 250);
     }());
 
-    function sleep(milliseconds) {
-      var start = new Date().getTime();
-      for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds){
-          break;
-        }
-      }
-    }
+    // function sleep(milliseconds) {
+    //   var start = new Date().getTime();
+    //   for (var i = 0; i < 1e7; i++) {
+    //     if ((new Date().getTime() - start) > milliseconds){
+    //       break;
+    //     }
+    //   }
+    // }
   </script>
 
 </body>
