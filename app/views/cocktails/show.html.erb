@@ -1,7 +1,7 @@
 <div class="general-container">
   <h1><%= @cocktail.name %></h1>
 
-  <%= image_tag @cocktail.photo, width: 600, height: 450, crop: :fill %>
+  <%= cl_image_tag @cocktail.photo, width: 600, height: 450, crop: :fill %>
 
     <h2 style="width: 600px; margin: 50px 0; text-align: center">How to make it</h2>
 

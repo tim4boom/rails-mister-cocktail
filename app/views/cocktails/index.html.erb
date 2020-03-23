@@ -75,7 +75,7 @@
           <h4>Add a cocktail:</h4>
           <%= simple_form_for (@cocktail) do |f| %>
             <%= f.input :name, placeholder: "Denzel Frothington" %>
-            <%= f.input :photo, placeholder: "Your froff image here" %>
+            <%= f.input :photo, as: :file, placeholder: "Your froff image here" %>
             <%= f.submit "Add", class: "btn-treehouse" %>
           <% end %>
         </div>
