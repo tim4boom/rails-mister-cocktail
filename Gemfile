@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'pg_search', '~> 2.3.0'
 gem 'faker'
 gem 'active_storage_validations'
+gem 'rails-social-share-button'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'

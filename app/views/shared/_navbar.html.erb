@@ -1,10 +1,15 @@
-<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-froffy">
 
   <div class="navbar-brand">
     <%= link_to cocktails_path, class: "navbar-brand" do %>
       <%= image_tag "favicon.png" %>
     <% end %>
   </div>
+
+  <div class="footer-links">
+    <a href="https://github.com/tim4boom"><i class="fab fa-github"></i></a>
+    <%= social_share_button_tag("Database Schema for your Project", url: "https://seeql.dev/", image: "https://res.cloudinary.com/bruncky/image/upload/v1583943200/SeeQL/SeeQL%20Logo.png", desc: "Visualisation and navigation for your database project.") %>
+    </div>
 
   <div class="avatar-dropdown">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,5 +28,4 @@
       </ul>
     </div>
   </div>
-
 </div>
