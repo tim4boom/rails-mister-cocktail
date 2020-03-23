@@ -5,6 +5,9 @@
 
     <h2 style="width: 600px; margin: 50px 0; text-align: center">How to make it</h2>
 
+  <%= link_to "Back", root_path, class: "btn-grey" %>
+  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn-treehouse" %>
+
   <table class="doses-table">
     <tbody>
       <% @doses.each do |dose| %>
@@ -17,7 +20,5 @@
     </tbody>
   </table>
 
-  <%= link_to "Back", root_path, class: "btn-grey" %>
-  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn-treehouse" %>
 </div>
 
