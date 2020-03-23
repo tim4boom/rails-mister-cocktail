@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A new tool to easily visualise table relations and navigate through your database in an instant.Start now, create your project and invite your team!.">
+    <meta property="og:title" content="Visualisation and navigation for your database project.">
+    <meta property="og:image" content="website">
+
     <title>Skits Froff-tails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= favicon_link_tag 'favicon.png' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +20,11 @@
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+
     <%= yield %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag "application" %> <!-- from app/javascript/packs/application.js -->
   </body>
