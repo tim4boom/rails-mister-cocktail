@@ -1,12 +1,58 @@
-.navbar-lewagon {
+.navbar {
+  background-color: transparent;
   justify-content: space-between;
-  background: white;
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-froffy-white {
+  background-color: rgba(255,255,255,0.8);
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-froffy .navbar-brand img {
   width: 40px;
+  margin: 0 20px;
+  &:hover {
+    width: 41px;
+    opacity: 0.8;
+  }
 }
+
+.avatar {
+  width: 60px;
+  margin: 8px 20px;
+  &:hover {
+    width: 61px;
+    opacity: 0.8;
+  }
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 28px;
+    padding: 0px 15px;
+
+    &:hover {
+        opacity: 1;
+    }
+  }
+}
+
+$size: 24px;
+
+.rails-social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    padding: 10px;
+    margin: 6px 10px 0 0;
+  }
+}
+
+
