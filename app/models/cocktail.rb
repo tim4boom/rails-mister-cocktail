@@ -1,9 +1,9 @@
 class Cocktail < ApplicationRecord
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
-  has_one_attached :image
+  has_one_attached :thumbnail
   validates :name, presence: true, uniqueness: true
-  validates :photo, presence: true
+  validates :thumbnail, presence: true
 
   include PgSearch::Model
   pg_search_scope(
