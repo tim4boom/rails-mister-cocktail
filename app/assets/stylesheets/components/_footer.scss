@@ -1,3 +1,16 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.7);
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -8,7 +21,6 @@
     text-decoration: none;
     font-size: 28px;
     padding: 0px 15px;
-
     &:hover {
         opacity: 1;
     }
@@ -25,4 +37,13 @@ $size: 24px;
     padding: 10px;
     margin: 6px 10px 0 0;
   }
+}
+
+.footer-brand {
+  height: 29px;
+  margin: 0 0 10px 8px;
+}
+
+.footer-copyright {
+  color: white;
 }

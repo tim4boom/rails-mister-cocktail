@@ -25,6 +25,8 @@
 
     <%= yield %>
 
+    <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag "application" %> <!-- from app/javascript/packs/application.js -->
   </body>
