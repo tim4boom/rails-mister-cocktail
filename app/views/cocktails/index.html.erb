@@ -84,13 +84,13 @@
           <% @cocktails.each do |cocktail| %>
             <% if cocktail.thumbnail.attached? %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.thumbnail.key %>')">
-              <%= cocktail.name %>
-              <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
+                <%= cocktail.name %>
+                <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
               </div>
             <% else %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo %>')">
-              <%= cocktail.name %>
-              <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
+                <%= cocktail.name %>
+                <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
               </div>
             <% end %>
           <% end %>
