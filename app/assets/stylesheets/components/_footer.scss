@@ -1,0 +1,28 @@
+.footer-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 28px;
+    padding: 0px 15px;
+
+    &:hover {
+        opacity: 1;
+    }
+  }
+}
+
+$size: 24px;
+
+.rails-social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    padding: 10px;
+    margin: 6px 10px 0 0;
+  }
+}
