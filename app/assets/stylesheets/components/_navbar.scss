@@ -9,7 +9,7 @@
 }
 
 .navbar-logo {
-  height: 100px;
+  height: 84px;
   margin: 0 20px;
   &:hover {
     opacity: 0.8;
@@ -18,15 +18,18 @@
 
 .avatar {
   height: 54px;
-  margin: 8px 20px;
+  margin: 0 20px;
   &:hover {
     opacity: 0.8;
   }
 }
 
-// .skits-froff-tails {
-//   width: 400px;
-//   margin: 0px 20px;
-// }
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 62px;
+  left: -145px;
+  float: none;
+}
+
 
 
