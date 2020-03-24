@@ -1,9 +1,32 @@
 <div class="footer">
-  <div class="footer-links">
-    <a href="https://github.com/tim4boom" target="_blank"><i class="fab fa-github-square"></i></a>
-    <%= rails_social_share_button_tag("How do Aussies call a beer a beer?", url: "https://skits-froff-tails.herokuapp.com/", image: "https://res.cloudinary.com/tim4boom/image/upload/v1584716901/new_banner_ogfnft.jpg", desc: "Just a funny website to list and document different Aussie ways to say beer") %>
+
+  <div class="navbar navbar-expand-sm navbar-dark">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li>
+          <div class="footer-links">
+            <a href="https://github.com/tim4boom" target="_blank"><i class="fab fa-github-square"></i></a>
+            <%= rails_social_share_button_tag("How do Aussies call a beer a beer?", url: "https://skits-froff-tails.herokuapp.com/", image: "https://res.cloudinary.com/tim4boom/image/upload/v1584716901/new_banner_ogfnft.jpg", desc: "Just a funny website to list and document different Aussie ways to say beer") %>
+          </div>
+        </li>
+      </ul>
+    </div>
+
   </div>
+
   <div class="footer-copyright">
-    © 2020 <%=  image_tag "skits-froff-tails-footer.png", class: "footer-brand" %>
+    © 2020 <%= image_tag "skits-froff-tails-footer.png", class: "footer-brand" %>
   </div>
+
 </div>
+
+
+
+
+
+
