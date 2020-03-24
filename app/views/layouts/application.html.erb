@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="UTF-8">
+
+    <title>SkitsFroffTails</title>
+
+    <%= favicon_link_tag 'favicon.png' %>
 
     <meta property="og:title" content="skits-froff-tails.herokuapp.com | Aussie ways to call a beer a beer" />
     <meta property="og:type" content="website" />
@@ -11,16 +15,12 @@
     <meta property="og:url" content="https://skits-froff-tails.herokuapp.com/" />
     <meta property="og:image" content="https://res.cloudinary.com/tim4boom/image/upload/v1585076813/og_image_ljtrcj.png" />
 
-    <title>SkitsFroffTails</title>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= favicon_link_tag 'favicon.png' %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application' %>
-
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
 
   <body>
