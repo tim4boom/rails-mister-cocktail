@@ -7,8 +7,8 @@
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.7);
+  padding: 0px 20px;
+  color: white;
 }
 
 .footer-links {
@@ -46,4 +46,13 @@ $size: 24px;
 
 .footer-copyright {
   color: white;
+  margin-right: 20px;
 }
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 62px;
+  left: -145px;
+  float: none;
+}
+

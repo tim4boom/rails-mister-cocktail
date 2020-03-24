@@ -1,22 +1,20 @@
 <div class="navbar fixed-top navbar-expand-sm navbar-light navbar-froffy">
 
+  <div class="navbar-brand">
+    <%= link_to cocktails_path do %>
+      <%= image_tag "skits-froff-tails.png", class: "navbar-logo" %>
+    <% end %>
+  </div>
 
-
-    <div class="navbar-brand">
-      <%= link_to cocktails_path do %>
-        <%= image_tag "skits-froff-tails.png", class: "navbar-logo" %>
-      <% end %>
-    </div>
-
-    <div class="dropdown-avatar">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <%= image_tag "female-avatar-profile-icon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-            <%= link_to "No Login necessary 🤓", "#", class: "dropdown-item" %>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="dropdown-avatar">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <%= image_tag "female-avatar-profile-icon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+          <%= link_to "No Login necessary 🤓", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
 
 </div>
