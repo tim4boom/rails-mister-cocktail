@@ -12,8 +12,9 @@
 }
 
 .footer-links {
-  display: flex;
-  align-items: center;
+  display: -webkit-inline-box;
+  align-items: start;
+  width: 225px;
 
   a {
     color: white;
@@ -49,10 +50,10 @@ $size: 24px;
   margin-right: 20px;
 }
 
-.navbar-nav .dropdown-menu {
+.navbar-nav .footer-links {
   position: absolute;
-  top: 62px;
-  left: -145px;
+  top: -10px;
+  left: 0px;
   float: none;
 }
 
