@@ -50,13 +50,6 @@ $size: 24px;
   margin-right: 20px;
 }
 
-.navbar-nav .footer-links {
-  position: absolute;
-  top: -10px;
-  left: 0px;
-  float: none;
-}
-
 .show {
   .footer-links {
     background-color: white;
@@ -67,3 +60,42 @@ $size: 24px;
   }
 }
 
+@media (min-width: 768px) {
+  .show {
+    .footer-links {
+      background-color: transparent;
+      position: absolute;
+      top: -13px;
+      left: 16px;
+      float: none;
+      display: -webkit-inline-box;
+      -webkit-box-align: center;
+      width: 285px;
+
+      a {
+        color: #277c00;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 28px;
+        padding: 0px 15px;
+        &:hover {
+            opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .show {
+    .rails-social-share-button {
+      .ssb-icon {
+        background-size: $size $size;
+        height: $size;
+        width: $size;
+        padding: 10px;
+        margin: 6px 10px 0 0;
+      }
+    }
+  }
+}
