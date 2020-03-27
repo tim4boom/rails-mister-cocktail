@@ -13,7 +13,7 @@
 
 .footer-links {
   display: -webkit-inline-box;
-  align-items: start;
+  -webkit-box-align: center;
   width: 225px;
 
   a {
@@ -55,5 +55,14 @@ $size: 24px;
   top: -10px;
   left: 0px;
   float: none;
+}
+
+.show {
+  .footer-links {
+    position: absolute;
+    top: -55px;
+    left: 18px;
+    float: none;
+  }
 }
 
