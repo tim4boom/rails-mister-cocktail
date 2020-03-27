@@ -2,7 +2,7 @@
 align-items: center;
 }
 
-.search-form .btn-treehouse {
+.search-form .btn-pink {
   margin-left: 20px;
 }
 
@@ -34,17 +34,7 @@ align-items: center;
 //Button/Arrow
 #arrow-down {
   position: relative;
-  margin: 0 auto;
+  margin: 0px auto;
   text-align: center;
   animation: jump 3s infinite;
-    i {
-      content: '\f0a8';
-      font-family: 'FontAwesome';
-      font-size: 80px;
-      transition: .3s ease-in-out;
-  }
-    i:hover {
-      opacity: 0.7;
-      transition: .3s ease-in-out;
-  }
 }

@@ -28,81 +28,86 @@
 </style>
 
 <body>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://res.cloudinary.com/tim4boom/image/upload/v1584716901/new_banner_ogfnft.jpg')">
+  <div id="lp-top">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://res.cloudinary.com/tim4boom/image/upload/v1584716901/new_banner_ogfnft.jpg')">
 
-    <div class="d-flex justify-content-center">
-      <div class="general-container">
-        <div class="dict-froffy">
-          <h1>Froff, Froffy</h1>
-          <p>| ˈfrɒff | ˈfrɒffie |</p>
-          <p>noun INFORMAL, DEROGATORY</p>
-          <p>plural noun: froffies</p>
-          <p><em>Sean: Oi coppa, keen to knock the froff off a couple this arvy?<br>
-          Steve: Sure am mate.</em></p>
-        </div>
+      <div class="d-flex justify-content-center">
+        <div class="general-container">
+          <div class="dict-froffy">
+            <h1>Froff, Froffy</h1>
+            <p>| ˈfrɒff | ˈfrɒffie |</p>
+            <p>noun INFORMAL, DEROGATORY</p>
+            <p>plural noun: froffies</p>
+            <p><em>Sean: Oi coppa, keen to knock the froff off a couple this arvy?<br>
+            Steve: Sure am mate.</em></p>
+          </div>
 
-        <div id="banner-slogan">
-          <h1><em>Enjoy your froff-tail the way you should...</em></h1>
-          <br>
-          <h1><em><div id="typing" class="typing"></div></em></h1>
-          <br>
-        </div>
+          <div id="banner-slogan">
+            <h1><em>Enjoy your froff-tail the way you should...</em></h1>
+            <br>
+            <h1><em><div id="typing" class="typing"></div></em></h1>
+            <br>
+          </div>
 
-        <div class="search-form">
-          <div class="d-flex">
-            <div class="search-form-input">
-              <%= form_tag root_path, method: :get do %>
-                <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  placeholder: "Find a Froff"
-                %>
-            </div>
-            <div class="search-form-submit">
-              <%= submit_tag "Search", class: "btn-treehouse" %>
-              <% end %>
+          <div class="search-form">
+            <div class="d-flex">
+              <div class="search-form-input">
+                <%= form_tag root_path, method: :get do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Find a Froff"
+                  %>
+              </div>
+              <div class="search-form-submit">
+                <%= submit_tag "Search", class: "btn-pink" %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-
-        <a href=".cards">
-          <div id="arrow-down">
-            <%= image_tag "favicon.png", alt: "alttext" %>
-          </div>
-        </a>
-
       </div>
+      <a href="#search-results">
+        <div id="arrow-down">
+          <%= image_tag "arrow-circle-down-solid.svg", alt: "alttext" %>
+        </div>
+      </a>
     </div>
   </div>
 
-  <div class="d-flex">
-    <div class="general-container">
-      <div class="form-and-cards">
-        <div class="add-form">
-          <div class="forms-card">
-            <h4>Add a cocktail:</h4>
-            <%= simple_form_for (@cocktail) do |f| %>
-              <%= f.input :name, placeholder: "Denzel Frothington" %>
-              <%= f.input :thumbnail, as: :file, placeholder: "Your froff image here" %>
-              <%= f.submit "Add", class: "btn-treehouse" %>
+  <div id="search-results">
+    <div class="d-flex">
+      <div class="general-container">
+        <div class="form-and-cards">
+          <div class="add-form">
+            <div class="forms-card">
+              <h4>Add a cocktail:</h4>
+              <%= simple_form_for (@cocktail) do |f| %>
+                <%= f.input :name, placeholder: "Denzel Frothington" %>
+                <%= f.input :thumbnail, as: :file, placeholder: "Your froff image here" %>
+                <%= f.submit "Add", class: "btn-pink" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="cards">
+            <% @cocktails.each do |cocktail| %>
+              <% if cocktail.thumbnail.attached? %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.thumbnail.key %>')">
+                  <%= cocktail.name %>
+                  <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
+                </div>
+              <% else %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo %>')">
+                  <%= cocktail.name %>
+                  <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         </div>
-
-        <div class="cards">
-          <% @cocktails.each do |cocktail| %>
-            <% if cocktail.thumbnail.attached? %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.thumbnail.key %>')">
-                <%= cocktail.name %>
-                <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
-              </div>
-            <% else %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo %>')">
-                <%= cocktail.name %>
-                <%= link_to "", cocktail_path(cocktail), class: "fas fa-info-circle" %>
-              </div>
-            <% end %>
-          <% end %>
+        <div class="text-center" style="margin: 40px">
+          <a href="#lp-top" style="color: #cf2b77"> Back to top</a>
         </div>
       </div>
     </div>
@@ -127,6 +132,15 @@
       }
       setTimeout(type, 250);
     }());
+
+    function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+        }
+      }
+    }
   </script>
 
 </body>

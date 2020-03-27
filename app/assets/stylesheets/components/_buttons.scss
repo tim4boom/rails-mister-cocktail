@@ -1,23 +1,25 @@
-.btn-treehouse {
+.btn-pink {
   color: white;
   padding: 5px 25px;
+  border: none;
   border-radius: 16px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  background: #6AD58B;
+  background: #cf2b77;
   transition: background 0.3s ease;
 }
 
-.btn-treehouse:hover {
+.btn-pink:hover {
   color: white;
   text-decoration: none;
-  background: #3ac161;
+  background: #8d325b;
 }
 
 .btn-grey {
   color: white;
   padding: 5px 25px;
   border-radius: 16px;
+  border: none;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   background: lightgrey;

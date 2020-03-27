@@ -74,7 +74,7 @@ SimpleForm.setup do |config|
   config.boolean_style = :nested
 
   # Default class for buttons
-  config.button_class = 'btn-treehouse'
+  config.button_class = 'btn-pink'
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
