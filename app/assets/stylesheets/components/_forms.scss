@@ -2,7 +2,7 @@
 align-items: center;
 }
 
-.search-form .btn-treehouse {
+.search-form .btn-pink {
   margin-left: 20px;
 }
 
@@ -16,5 +16,25 @@ align-items: center;
 
 .add-form {
   width: 270px;
-  margin-top: 20px;
+}
+
+.forms-card {
+  padding: 36px 24px;
+  background-color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// Animation
+@keyframes jump {
+  0% { top: 0; } 50% { top: 20px; } 100% { top: 0; }
+}
+
+//Button/Arrow
+#arrow-down {
+  position: relative;
+  margin: 0px auto;
+  text-align: center;
+  animation: jump 3s infinite;
 }

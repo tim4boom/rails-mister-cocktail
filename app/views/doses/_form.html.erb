@@ -1,12 +1,19 @@
-<%= link_to "Back", root_path, class: "btn btn-primary" %>
+<div class="general-container">
+  <div class="forms-card">
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.association :ingredient, input_html: { class: 'select2' } %>
-  </div>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-actions">
-    <%= f.submit %>
+      <div class="form-inputs">
+        <%= f.input :description %>
+        <%= f.association :ingredient, input_html: { class: 'select2' } %>
+      </div>
+
+      <div class="form-actions">
+        <%= link_to "Back", root_path, class: "btn-grey" %>
+        <%= f.button :submit, "Add dose", class: "btn-pink" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
