@@ -1,14 +1,15 @@
 <div class="general-container">
-  <%= link_to "Back", root_path, class: "btn btn-primary" %>
+  <div class="forms-card">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :description %>
+        <%= f.association :ingredient, input_html: { class: 'select2' } %>
+      </div>
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <div class="form-inputs">
-      <%= f.input :description %>
-      <%= f.association :ingredient, input_html: { class: 'select2' } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= link_to "Back", root_path, class: "btn-grey" %>
+        <%= f.button :submit, "Add dose", class: "btn-treehouse" %>
+      </div>
+    <% end %>
+  </div>
 </div>

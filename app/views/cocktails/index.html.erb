@@ -72,12 +72,14 @@
     <div class="general-container">
       <div class="form-and-cards">
         <div class="add-form">
-          <h4>Add a cocktail:</h4>
-          <%= simple_form_for (@cocktail) do |f| %>
-            <%= f.input :name, placeholder: "Denzel Frothington" %>
-            <%= f.input :thumbnail, as: :file, placeholder: "Your froff image here" %>
-            <%= f.submit "Add", class: "btn-treehouse" %>
-          <% end %>
+          <div class="forms-card">
+            <h4>Add a cocktail:</h4>
+            <%= simple_form_for (@cocktail) do |f| %>
+              <%= f.input :name, placeholder: "Denzel Frothington" %>
+              <%= f.input :thumbnail, as: :file, placeholder: "Your froff image here" %>
+              <%= f.submit "Add", class: "btn-treehouse" %>
+            <% end %>
+          </div>
         </div>
 
         <div class="cards">
