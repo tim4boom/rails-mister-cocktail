@@ -12,11 +12,12 @@
 }
 
 .footer-links {
-  display: flex;
-  align-items: center;
+  display: -webkit-inline-box;
+  -webkit-box-align: center;
+  width: 285px;
 
   a {
-    color: white;
+    color: #277c00;
     opacity: 0.8;
     text-decoration: none;
     font-size: 28px;
@@ -49,10 +50,20 @@ $size: 24px;
   margin-right: 20px;
 }
 
-.navbar-nav .dropdown-menu {
+.navbar-nav .footer-links {
   position: absolute;
-  top: 62px;
-  left: -145px;
+  top: -10px;
+  left: 0px;
   float: none;
+}
+
+.show {
+  .footer-links {
+    background-color: white;
+    position: absolute;
+    top: -55px;
+    left: 18px;
+    float: none;
+  }
 }
 
